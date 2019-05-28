@@ -62,14 +62,17 @@ $page = $_GET["pages"];
             <li class="<?php if($page === 'reserveringen' || $page === 'bestellingTafel') { echo 'active'; } ?>">
                 <a href="index.php?pages=reserveringen">Reserveringen</a>
             </li>
-            <li class="<?php if($page === 'overzichten'|| $page === 'overzichtkok'|| $page === 'overzichtbarman') { echo 'active'; } ?>">
-                <a href="#overzichtSubmenu" data-toggle="collapse" aria-expanded="<?php if($page === 'overzichten' || $page === 'overzichtkok'|| $page === 'overzichtbarman') { echo 'true'; } ?>" class="dropdown-toggle">Overzichten</a>
-                <ul class="collapse list-unstyled <?php if($page === 'overzichten' || $page === 'overzichtkok'|| $page === 'overzichtbarman') { echo 'show'; } ?>" id="overzichtSubmenu">
+            <li class="<?php if($page === 'overzichten'|| $page === 'overzichtkok'|| $page === 'overzichtbarman' || $page === 'overzichtober') { echo 'active'; } ?>">
+                <a href="#overzichtSubmenu" data-toggle="collapse" aria-expanded="<?php if($page === 'overzichten' || $page === 'overzichtkok'|| $page === 'overzichtbarman' || $page === 'overzichtober') { echo 'true'; } ?>" class="dropdown-toggle">Overzichten</a>
+                <ul class="collapse list-unstyled <?php if($page === 'overzichten' || $page === 'overzichtkok'|| $page === 'overzichtbarman' || $page === 'overzichtober') { echo 'show'; } ?>" id="overzichtSubmenu">
                     <li class="<?php if($page === 'overzichten' || $page === 'overzichtkok') { echo 'active'; } ?>">
                         <a href="index.php?pages=overzichtkok">Overzicht kok</a>
                     </li>
                     <li class="<?php if($page === 'overzichten' || $page === 'overzichtbarman') { echo 'active'; } ?>">
                         <a href="index.php?pages=overzichtbarman">Overzicht barman</a>
+                    </li>
+                    <li class="<?php if($page === 'overzichten' || $page === 'overzichtober') { echo 'active'; } ?>">
+                        <a href="index.php?pages=overzichtober">Overzicht ober</a>
                     </li>
                 </ul>
             </li>
