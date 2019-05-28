@@ -5,7 +5,7 @@
         <h2>Overzicht Ober</h2>
         <h5>Overzicht dranken</h5>
         <?php
-        // Alle bestelde dranken worden hier opgehaald
+        // Alle bestelde bestellingen worden hier opgehaald
         try {
             $query = "SELECT Bestelling.Tafel, Bestelling.Datum, Bestelling.Tijd, Bestelling.MenuCodeItem, Bestelling.Aantal, Bestelling.Klaargemaakt, MenuItem.MenuItem, MenuItem.GerechtCode FROM Bestelling INNER JOIN MenuItem ON Bestelling.MenuCodeItem = MenuItem.MenuItemCode ORDER BY Bestelling.Tijd, Bestelling.Tafel, MenuItem.GerechtCode";
             $stmt = $db->prepare($query);
@@ -15,7 +15,7 @@
             echo $e->getMessage();
         }
 
-        //Hier wordt gecontroleerd of er wel bestellingen zijn met drankjes
+        //Hier wordt gecontroleerd of er wel bestellingen zijn
         if (!empty($result)){
 
             ?>
@@ -26,7 +26,7 @@
                 if ($row['Klaargemaakt'] === '1') {
                     //Hier word gekeken of de klaargemaakte bestelling een drank is.
                     if ($row['GerechtCode'] === '2') {
-                        //De klaargemaakte bestellingen worden nu getoond.
+                        //De afgeronde bestellingen worden nu getoond.
                         if ($tafel !== $row['Tafel']) {
                             echo '<hr>';
                             echo '<h4>Tafel: ' . $row['Tafel'] . '</h4>';
